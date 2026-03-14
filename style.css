@@ -153,12 +153,16 @@ nav.scrolled {
 
 /* Buttons */
 .btn-glow {
+    display: inline-block;
     padding: 8px 24px;
     border-radius: 30px;
     border: 1px solid var(--neon-blue);
     color: var(--neon-blue) !important;
     position: relative;
     overflow: hidden;
+    /* Wymusza poprawne przycinanie w Safari przy animacjach transformacji */
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    mask-image: radial-gradient(white, black);
     transition: all 0.3s;
     z-index: 1;
 }
@@ -172,6 +176,7 @@ nav.scrolled {
     transition: transform 0.4s ease;
     transform: scaleX(0);
     transform-origin: right;
+    /* Usunięto border-radius: inherit; żeby uniknąć wykrzywiania podczas skalowania sztywniejącego rogi */
 }
 
 .btn-glow:hover {
