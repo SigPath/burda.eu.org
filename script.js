@@ -78,24 +78,95 @@ document.addEventListener("DOMContentLoaded", () => {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            const nazwa = document.getElementById('name').value;
-            const userEmail = document.getElementById('email').value;
-            const wiadomosc = document.getElementById('message').value;
+            // POBIERZ URL Z GOOGLE APPS SCRIPT (Web App URL)
+            // TUTAJ WKLEJ SWÓJ URL PO WDROŻENIU SKRYPTU
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxhofksejO2y5VwKW6JSl1Dn5G5Huzqg_5AJaDuF8R_ZbsstRgL0eOAxG7vylCTDQcV/exec';
 
-            // Schowany adres email burda.marcin@me.com
-            const part1 = "burda.marcin";
-            const part2 = "me.com";
-            const adres = part1 + "@" + part2;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnContent = submitBtn.innerHTML;
+            
+            // Zmiana przycisku na stan ładowania
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Wysyłanie...';
 
-            const subject = encodeURIComponent("Wiadomość z portolio od: " + nazwa);
-            const body = encodeURIComponent(
-                "Od: " + nazwa + "\n" +
-                "E-mail kontaktowy: " + userEmail + "\n\n" +
-                "Treść wiadomości:\n" + wiadomosc
-            );
+            const formData = new FormData(form);
 
-            // Otwieramy domyślnego klienta poczty
-            window.location.href = `mailto:${adres}?subject=${subject}&body=${body}`;
+            fetch(scriptURL, { method: 'POST', body: formData })
+                .then(response => {
+                    console.log('Success!', response);
+                    submitBtn.innerHTML = 'Wysłano pomyślnie!';
+                    submitBtn.classList.remove('btn-primary');
+                    submitBtn.classList.add('btn-success'); // Zakładając, że masz taką klasę lub dodamy style
+                    form.reset();
+                    
+                    setTimeout(() => {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalBtnContent;
+                        submitBtn.classList.remove('btn-success');
+                        submitBtn.classList.add('btn-primary');
+                    }, 5000);
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Błąd! Spróbuj ponownie';
+                    
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalBtnContent;
+                    }, 3000);
+                });
         });
+    }
+
+    // 7. Cookie Consent Logic
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptCookies = document.getElementById('accept-cookies');
+    const declineCookies = document.getElementById('decline-cookies');
+
+    if (cookieBanner && !localStorage.getItem('cookieConsent')) {
+        setTimeout(() => {
+            cookieBanner.classList.remove('hidden');
+        }, 2000);
+    }
+
+    if (acceptCookies) {
+        acceptCookies.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'accepted');
+            cookieBanner.classList.add('hidden');
+        });
+    }
+
+    if (declineCookies) {
+        declineCookies.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'declined');
+            cookieBanner.classList.add('hidden');
+        });
+    }
+
+    // 8. Privacy Policy Modal Logic
+    const privacyModal = document.getElementById('privacy-modal');
+    const openPrivacy = document.getElementById('open-privacy');
+    const closePrivacy = document.querySelector('.close-modal');
+    const modalOverlay = document.querySelector('.modal-overlay');
+
+    if (openPrivacy && privacyModal) {
+        openPrivacy.addEventListener('click', (e) => {
+            e.preventDefault();
+            privacyModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Stop scrolling
+        });
+    }
+
+    const closeModalFunc = () => {
+        privacyModal.classList.add('hidden');
+        document.body.style.overflow = ''; // Resume scrolling
+    };
+
+    if (closePrivacy) {
+        closePrivacy.addEventListener('click', closeModalFunc);
+    }
+
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', closeModalFunc);
     }
 });

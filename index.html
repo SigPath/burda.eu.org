@@ -169,15 +169,15 @@
 
                 <form class="contact-form">
                     <div class="input-group">
-                        <input type="text" id="name" required placeholder=" ">
+                        <input type="text" id="name" name="name" required placeholder=" ">
                         <label for="name">Jak się nazywasz?</label>
                     </div>
                     <div class="input-group">
-                        <input type="email" id="email" required placeholder=" ">
+                        <input type="email" id="email" name="email" required placeholder=" ">
                         <label for="email">Adres e-mail</label>
                     </div>
                     <div class="input-group">
-                        <textarea id="message" rows="4" required placeholder=" "></textarea>
+                        <textarea id="message" name="message" rows="4" required placeholder=" "></textarea>
                         <label for="message">Wiadomość / Projekt</label>
                     </div>
                     <button type="submit" class="btn-primary btn-glow-large">
@@ -192,7 +192,7 @@
     <footer>
         <div class="footer-content">
             <div class="logo">BURDA<span class="highlight">.eu.org</span></div>
-            <p>&copy; 2026 Inteligencja • Automatyzacja • Przyszłość.</p>
+            <p>&copy; 2026 Inteligencja • Automatyzacja • Przyszłość. <a href="#" id="open-privacy" class="privacy-link">Polityka Prywatności</a></p>
             <div class="social-links">
                 <a href="#"><i data-lucide="github"></i></a>
                 <a href="#"><i data-lucide="linkedin"></i></a>
@@ -212,6 +212,46 @@
 
     <!-- Custom Script -->
     <script src="script.js"></script>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner glass hidden">
+        <div class="cookie-content">
+            <p>Ta strona używa ciasteczek, aby zapewnić najlepszą jakość usług. Korzystając ze strony, zgadzasz się na ich użycie zgodnie z RODO.</p>
+            <div class="cookie-btns">
+                <button id="accept-cookies" class="btn-primary">Akceptuję</button>
+                <button id="decline-cookies" class="btn-secondary">Odrzuć</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-container glass">
+            <div class="modal-header">
+                <h2>Polityka Prywatności</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="policy-body">
+                <section>
+                    <h3>1. Informacje ogólne</h3>
+                    <p>Serwis burda.eu.org dba o Twoją prywatność. Przetwarzamy dane zgodnie z Rozporządzeniem o Ochronie Danych Osobowych (RODO).</p>
+                </section>
+                <section>
+                    <h3>2. Dane z formularza</h3>
+                    <p>Dane wpisane w formularzu kontaktowym (Imię, E-mail, Wiadomość) są przesyłane do arkusza Google i wykorzystywane wyłącznie w celu nawiązania kontaktu zwrotnego. Nie są one sprzedawane ani udostępniane firmom trzecim.</p>
+                </section>
+                <section>
+                    <h3>3. Pliki Cookies</h3>
+                    <p>Strona wykorzystuje technologię Cookies w celu poprawnego działania oraz analizy ruchu. Wybierając "Akceptuję" na banerze, zgadzasz się na ich przechowywanie w Twojej przeglądarce.</p>
+                </section>
+                <section>
+                    <h3>4. Kontakt</h3>
+                    <p>Jeśli masz pytania dotyczące swoich danych, skontaktuj się pod adresem: burda.marcin@me.com</p>
+                </section>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
