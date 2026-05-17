@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu - Neo Bar Mleczny</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* CSS Variables */
+:root {
+  --bg: #F5F2EB;
+  --ink: #1A1A1A;
+  --accent: #D33F35;
+  --muted: #595550;
+  --veg: #2D6A4F;
+  --font-display: 'Fraunces', serif;
+  --font-sans: 'Space Grotesk', sans-serif;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Print optimizations and layout */
+@page {
+  size: A4;
+  margin: 0;
+}
+
+body {
+  background-color: #E0DBD0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: var(--font-sans);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media print {
+  body {
+    background-color: var(--bg) !important;
+    padding: 0;
+    display: block;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .menu-wrapper {
+    box-shadow: none !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+}
+
+.menu-wrapper {
+  background-color: var(--bg);
+  width: 210mm;
+  min-height: 297mm;
+  padding: 12mm 15mm;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  border-top: 4px solid var(--ink);
+  border-bottom: 4px solid var(--ink);
+  padding: 1.25rem 0;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+header::before, header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--ink);
+}
+header::before { top: 3px; }
+header::after { bottom: 3px; }
+
+.header-top {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-size: 3.8rem;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.02em;
+}
+
+h1 .red {
+  color: var(--accent);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.star-icon {
+  vertical-align: middle;
+  margin: 0 8px;
+  transform: translateY(-4px);
+  width: 28px;
+  height: 28px;
+  stroke: var(--accent);
+}
+
+.slogan {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+/* Menu Grid */
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.5rem;
+  row-gap: 1.5rem;
+  flex-grow: 1;
+}
+
+.section {
+  break-inside: avoid;
+  margin-bottom: 1.25rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 0.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-title::after {
+  content: '✦';
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+
+/* Items */
+.item {
+  margin-bottom: 0.75rem;
+  break-inside: avoid;
+}
+
+.item-main {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 0.15rem;
+}
+
+.item-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  background-color: var(--bg);
+  padding-right: 4px;
+}
+
+.veg-badge {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--veg);
+  color: var(--veg);
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 12px;
+  text-align: center;
+  border-radius: 50%;
+  margin-left: 6px;
+  transform: translateY(-1px);
+}
+
+.item-leader {
+  flex-grow: 1;
+  border-bottom: 2px dotted #C4BEB2;
+  margin: 0 6px;
+  position: relative;
+  top: -4px;
+}
+
+.item-price {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--ink);
+  background-color: var(--bg);
+  padding-left: 4px;
+}
+
+.item-desc {
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1.35;
+  padding-right: 15%;
+}
+
+/* Footer */
+footer {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--ink);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.footer-col.right {
+  text-align: right;
+}
+
+.footer-highlight {
+  color: var(--ink);
+  font-weight: 700;
+}
+</style>
+</head>
+<body>
+
+<div class="menu-wrapper">
+  <header>
+    <div class="header-top">Jadłodajnia Współczesna</div>
+    <h1>Mleczny <svg class="star-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> <span class="red">Neo</span></h1>
+    <p class="slogan">Nowa definicja polskiej klasyki • Est. 2024</p>
+  </header>
+
+  <div class="columns">
+    <!-- Kolumna Lewa -->
+    <div class="col">
+      
+      <div class="section">
+        <h2 class="section-title">Śniadania</h2>
+        
+        <div class="item">
+          <div class="item-main">
+            <span class="item-name">Jajecznica na maśle<span class="veg-badge" title="Wegetariańskie">V</span></span>
+            <div class="item-leader"></div>
+            <span class="item-price">12,-</span>
+          </div>
+          <p class="item-desc">3 wiejskie jaja, szczypiorek, rzemieślniczy chleb na zakwasie.</p>
+        </div>
+        
+        <div class="item">
+          <div class="item-main">
+            <span class="item-name">Twarożek z rzodkiewką<span class="veg-badge" title="Wegetariańskie">V</span></span>
+            <div class="item-leader"></div>
+            <span class="item-price">14,-</span>
+          </div>
+          <p class="item-desc">Półtłusty twaróg, gęsta śmietana, szczypiorek, świeże pieczywo.</p>
+        </div>
+        
+        <div class="item">
+          <div class="item-main">
+            <span class="item-name">Parówki z wody</span>
+            <div class="item-leader"></div>
+            <span class="item-price">15,-</span>
+          </div>
+          <p class="item-desc">Dwie parówki cielęce, musztarda sarepska, chrupiąca bułka.</p>
+        </div>
+      </div>
+      
+      <div class="section">
+        <h2 class="section-title">Zupy</h2>
+        
+        <div class="item">
+          <div class="item-main">
+            <span class="item-name">Pomidorowa z makaronem<span class="veg-badge" title="Wegetariańskie">V</span></span>
+            <div class="item-leader"></div>
+            <span class="item-price">16,-</span>
+          </div>
+          <p class="item-desc">Bulion warzywny, przecier z pomidorów malinowych, domowy makaron.</p>
+        </div>
+        
+        <div class="item">
+          <div class="item-main">
+            <span class="item-name">Żurek na zakwasie</span>
+            <div class="item-leader"></div>
+            <span class="item-price">19,-</span>
+          </div>
+          <p class="item-desc">Biała kiełbasa, jajko, roztarty majeranek, chleb żytni.</p>
+        </div>
+        
+        <div class="item">
+          <div class="item-main">
+            <span class="item-name">Chłodnik litewski<span class="veg-badge" title="Wegetariańskie">V</span></span>
+            <div class="item-leader"></div>
+            <span class="item-price">18,-</span>
+          </div>
+          <p class="item-desc">Młode buraki, kefir, ogórek, rzodkiewka, świeży koperek.</p>
+        </div>
+      </div>
+      
+      <div class="section">
+        <h2 class="section-title">Dania Obiadowe</h2>
+        
+        <div class="item">
+          <div class="item-main">
+            <span class="item-name">Gulasz wołowy z kaszą</span>
+            <div class="item-leader"></div>
+            <span class="item-price">32,-</span>
+          </div>
+          <p class="item-desc">Wolno duszona wołowina, kasza gryczana, ogórek kiszony krojony.</p>
+        </div>
+        
+        <div class="item">
+          <div class="item-main">
+            <span class="item-name">Gołąbki w sosie</span>
+            <div class="item-leader"></div>
+            <span class="item-price">28,-</span>
+          </div>
+          <p class="item-desc">Mielona wieprzowina z ryżem, młoda kapusta, aksamitny sos pomidorowy.</p>
+        </div>
+      </div>
+      
+      <div class="section">
+        <h2 class="section-title">Kotlety</h2>
+        
+        <div class="item">
+          <div class="item-main">
+            <span class="item-name">Schabowy z kością</span>
+            <div class="item-leader"></div>
+            <span class="item-price">34,-</span>
+          </div>
+          <p class="item-desc">Smażony na złoto na smalcu, ziemniaki z koperkiem, klasyczna mizeria.</p>
+        </div>
+        
+        <div class="item">
+          <div class="item-main">
+            <span class="item-name">Mielony z buraczkami</span>
+            <div class="item-leader"></div>
+            <span class="item-price">29,-</span>
+          </div>
+          <p class="item-desc">Tradycyjny kotlet wieprzowy, kremowe purée, zasmażane buraczki.</p>
+        </div>
+        
+        <div class="item">
+          <div class="item-main">
+            <span class="item-name">De Volaille z masłem</span>
+            <div class="item-leader"></div>
+            <span class="item-price">36,-</span>
+          </div>
+          <p class="item-desc">Chrupiąca pierś z kurczaka, płynne masło z pietruszką, frytki, surówka.</p>
+        </div>
+      </div>
+      
+      <div class="section">
+        <h2 class="section-title">Dania Jarskie</h2>
+        
+        <div class="item">
+          <div class="item-main">
+            <span class="item-name">Placki ziemniaczane<span class="veg-badge" title="Wegetariańskie">V</span></span>
+            <div class="item-leader"></div>
+            <span class="item-price">22,-</span>
+          </div>
+          <p class="item-desc">Chrupiące placki podawane z gęstą kwaśną śmietaną lub musem jabłkowym.</p>
+        </div>
+        
+        <div class="item">
+          <div class="item-main">
+            <span class="item-name">Kopytka z masłem<span class="veg-badge" title="Wegetariańskie">V</span></span>
+            <div class="item-leader"></div>
+            <span class="item-price">20,-</span>
+          </div>
+          <p class="item-desc">Ręcznie robione kopytka, zrumieniona bułka tarta na maśle.</p>
+        </div>
+        
+        <div class="item">
+          <div class="item-main">
+            <span class="item-name">Fasolka po bretońsku<span class="veg-badge" title="Wegetariańskie">V</span></span>
+            <div class="item-leader"></div>
+            <span class="item-price">24,-</span>
+          </div>
+          <p class="item-desc">Wędzone tofu, fasola Jaś, pomidory, majeranek.</p>
+        </div>
+      </div>
+      
+    </div>
+    
+    <!-- Kolumna Prawa -->
+    <div class="col">
+      
+      <div class="section">
+        <h2 class="section-title">Pierogi</h2>
+        
+        <div class="item">
+          <div class="item-main">
+            <span class="item-name">Ruskie<span class="veg-badge" title="Wegetariańskie">V</span></span>
+            <div class="item-leader"></div>
+            <span class="item-price">24,-</span>
+          </div>
+          <p class="item-desc">Farsz z twarogu i ziemniaków, okrasa z duszonej cebulki lub wędzonego boczku.</p>
+        </div>
+        
+        <div class="item">
+          <div class="item-main">
+            <span class="item-name">Z mięsem</span>
+            <div class="item-leader"></div>
+            <span class="item-price">26,-</span>
+          </div>
+          <p class="item-desc">Mocno doprawiony farsz wołowo-wieprzowy, złociste skwarki.</p>
+        </div>
+        
+        <div class="item">
+          <div class="item-main">
+            <span class="item-name">Z owocami lata<span class="veg-badge" title="Wegetariańskie">V</span></span>
+            <div class="item-leader"></div>
+            <span class="item-price">24,-</span>
+          </div>
+          <p class="item-desc">Soczyste truskawki, polane słodką śmietanką i oprószone cukrem pudrem.</p>
+        </div>
+      </div>
+      
+      <div class="section">
+        <h2 class="section-title">Naleśniki</h2>
+        
+        <div class="item">
+          <div class="item-main">
+            <span class="item-name">Z serem na słodko<span class="veg-badge" title="Wegetariańskie">V</span></span>
+            <div class="item-leader"></div>
+            <span class="item-price">22,-</span>
+          </div>
+          <p class="item-desc">Aksamitny twaróg z wanilią, polewa śmietanowa, cukier puder.</p>
+        </div>
+        
+        <div class="item">
+          <div class="item-main">
+            <span class="item-name">Z prażonymi jabłkami<span class="veg-badge" title="Wegetariańskie">V</span></span>
+            <div class="item-leader"></div>
+            <span class="item-price">20,-</span>
+          </div>
+          <p class="item-desc">Jabłka duszone z cynamonem, gęsty owocowy mus.</p>
+        </div>
+        
+        <div class="item">
+          <div class="item-main">
+            <span class="item-name">Ze szpinakiem i fetą<span class="veg-badge" title="Wegetariańskie">V</span></span>
+            <div class="item-leader"></div>
+            <span class="item-price">25,-</span>
+          </div>
+          <p class="item-desc">Świeże liście szpinaku, czosnek, pokruszony słony ser feta.</p>
+        </div>
+      </div>
+      
+      <div class="section">
+        <h2 class="section-title">Desery</h2>
+        
+        <div class="item">
+          <div class="item-main">
+            <span class="item-name">Galaretka z bitą śmietaną<span class="veg-badge" title="Wegetariańskie">V</span></span>
+            <div class="item-leader"></div>
+            <span class="item-price">12,-</span>
+          </div>
+          <p class="item-desc">Mocno owocowa galaretka truskawkowa, puszysta domowa bita śmietana.</p>
+        </div>
+        
+        <div class="item">
+          <div class="item-main">
+            <span class="item-name">Blok czekoladowy</span>
+            <div class="item-leader"></div>
+            <span class="item-price">14,-</span>
+          </div>
+          <p class="item-desc">Kultowy deser z mleka w proszku, herbatników krakowskich i ciemnego kakao.</p>
+        </div>
+        
+        <div class="item">
+          <div class="item-main">
+            <span class="item-name">Kisiel malinowy<span class="veg-badge" title="Wegetariańskie">V</span></span>
+            <div class="item-leader"></div>
+            <span class="item-price">10,-</span>
+          </div>
+          <p class="item-desc">Domowy kisiel na bazie soku z malin, z kawałkami owoców.</p>
+        </div>
+      </div>
+      
+      <div class="section">
+        <h2 class="section-title">Kompoty</h2>
+        
+        <div class="item">
+          <div class="item-main">
+            <span class="item-name">Z owoców sadu</span>
+            <div class="item-leader"></div>
+            <span class="item-price">8,-</span>
+          </div>
+          <p class="item-desc">Gotowany na wolnym ogniu z polskich jabłek, wiśni i śliwek.</p>
+        </div>
+        
+        <div class="item">
+          <div class="item-main">
+            <span class="item-name">Z truskawek</span>
+            <div class="item-leader"></div>
+            <span class="item-price">8,-</span>
+          </div>
+          <p class="item-desc">Sezonowy, słodki i bardzo orzeźwiający.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">Napoje</h2>
+        
+        <div class="item">
+          <div class="item-main">
+            <span class="item-name">Kefir z Krasnegostawu</span>
+            <div class="item-leader"></div>
+            <span class="item-price">7,-</span>
+          </div>
+          <p class="item-desc">Zimny, gęsty, idealny dodatek do placków i młodych ziemniaków.</p>
+        </div>
+        
+        <div class="item">
+          <div class="item-main">
+            <span class="item-name">Kawa zbożowa Inka</span>
+            <div class="item-leader"></div>
+            <span class="item-price">9,-</span>
+          </div>
+          <p class="item-desc">Klasyczna, serwowana z ciepłym mlekiem w szklance z koszyczkiem.</p>
+        </div>
+        
+        <div class="item">
+          <div class="item-main">
+            <span class="item-name">Oranżada rzemieślnicza</span>
+            <div class="item-leader"></div>
+            <span class="item-price">12,-</span>
+          </div>
+          <p class="item-desc">Tradycyjna, mocno gazowana, kapslowana.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-col">
+      <span class="footer-highlight">ul. Koszykowa 12, Warszawa</span>
+      <span>hello@mlecznyneo.pl</span>
+      <span>+48 123 456 789</span>
+    </div>
+    <div class="footer-col right">
+      <span class="footer-highlight">Pon - Pt: 08:00 - 20:00</span>
+      <span>Sob - Niedz: 09:00 - 18:00</span>
+      <span>mlecznyneo.pl</span>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
