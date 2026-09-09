@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odliczanie dla Kingi!</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #000000; /* Czarne tło */
+            color: #ffffff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #ff0000; /* Czerwony */
+            text-shadow: 2px 2px 4px #550000;
+            margin-bottom: 20px;
+            z-index: 10;
+        }
+
+        #countdown {
+            font-size: 5em;
+            font-weight: bold;
+            background-color: rgba(30, 30, 30, 0.8);
+            border: 2px solid #ff0000;
+            color: #ff0000;
+            padding: 20px 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255,0,0,0.5);
+            margin-bottom: 50px;
+            z-index: 10;
+        }
+
+        .characters {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 150px; /* Przestrzeń między postaciami */
+            margin-top: 20px;
+            z-index: 10;
+            position: relative;
+        }
+
+        .character-container {
+            position: relative;
+        }
+
+        img.character {
+            max-width: 250px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(255,255,255,0.1);
+        }
+
+        /* Animacja Kocura */
+        #cat-container {
+            animation: spankCat 4s infinite;
+            z-index: 20;
+        }
+
+        /* Animacja Myszki */
+        #mouse-container {
+            animation: mouseReact 4s infinite;
+        }
+
+        @keyframes spankCat {
+            0%, 75% { transform: translateX(0) rotate(0deg); }
+            80% { transform: translateX(180px) translateY(-30px) rotate(15deg); } /* Podchodzi i bierze zamach */
+            85% { transform: translateX(180px) translateY(20px) rotate(-20deg); } /* KLAPS! */
+            90% { transform: translateX(180px) translateY(-10px) rotate(5deg); } /* Odskakuje po klapsie */
+            100% { transform: translateX(0) rotate(0deg); } /* Wraca na miejsce */
+        }
+
+        @keyframes mouseReact {
+            0%, 84% { transform: translateX(0); }
+            85%, 88% { transform: translateX(20px) rotate(10deg); filter: brightness(1.5) sepia(1) hue-rotate(-50deg) saturate(5); } /* Reakcja na klapsa - błysk na czerwono */
+            89%, 95% { transform: translateX(0) rotate(-2deg); filter: none; }
+            100% { transform: translateX(0); }
+        }
+
+        /* Napis KLAPS */
+        .klaps-text {
+            position: absolute;
+            top: 50px;
+            left: -50px;
+            font-size: 4em;
+            color: #ffcc00;
+            font-weight: bold;
+            font-style: italic;
+            text-shadow: 3px 3px 0 #ff0000, -2px -2px 0 #fff;
+            opacity: 0;
+            z-index: 30;
+            animation: showKlaps 4s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes showKlaps {
+            0%, 84% { opacity: 0; transform: scale(0.5) rotate(-20deg); }
+            85% { opacity: 1; transform: scale(1.5) rotate(-10deg); }
+            88% { opacity: 0; transform: scale(2) rotate(0deg); }
+            100% { opacity: 0; }
+        }
+
+        .speech-bubble {
+            position: absolute;
+            background: #222;
+            color: #fff;
+            border: 2px solid #ff0000;
+            border-radius: .4em;
+            padding: 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(255,0,0,0.3);
+            top: -70px;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+
+        .speech-bubble:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border: 20px solid transparent;
+            border-top-color: #ff0000;
+            border-bottom: 0;
+            border-left: 0;
+            margin-left: -10px;
+            margin-bottom: -22px;
+        }
+        
+        .speech-bubble-inner:after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border: 18px solid transparent;
+            border-top-color: #222;
+            border-bottom: 0;
+            border-left: 0;
+            margin-left: -9px;
+            margin-bottom: -18px;
+            z-index: 1;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Kinga idę po Ciebie odliczaj 😈</h1>
+
+    <div id="countdown">Ładowanie...</div>
+
+    <div class="characters">
+        <div class="character-container" id="cat-container">
+            <div class="speech-bubble">
+                Bądź gotowa! 😼
+                <div class="speech-bubble-inner"></div>
+            </div>
+            <img id="cat" class="character" src="cat.jpg" alt="Marcin Kocur">
+        </div>
+        
+        <div class="character-container" id="mouse-container">
+            <div class="klaps-text">KLAPS! 💥</div>
+            <div class="speech-bubble" style="top: -50px; font-size: 0.9em; border-radius: 50%; padding: 15px;">
+                *pisku* 🫣
+                <div class="speech-bubble-inner"></div>
+            </div>
+            <img id="mouse" class="character" src="mouse.jpg" alt="Kinga Myszka">
+        </div>
+    </div>
+
+    <script>
+        // Set the date we're counting down to
+        const countDownDate = new Date("Sep 9, 2026 20:00:00").getTime();
+
+        // Update the count down every 1 second
+        const x = setInterval(function() {
+
+            // Get today's date and time
+            const now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            const distance = countDownDate - now;
+
+            // Time calculations for hours, minutes and seconds
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in an element with id="countdown"
+            document.getElementById("countdown").innerHTML = 
+                (hours < 10 ? "0" + hours : hours) + ":" + 
+                (minutes < 10 ? "0" + minutes : minutes) + ":" + 
+                (seconds < 10 ? "0" + seconds : seconds);
+
+            // If the count down is over, write some text 
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "00:00:00 - CZAS MINĄŁ!";
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
