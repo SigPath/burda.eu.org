@@ -1,0 +1,17 @@
+{
+  "name": "burda-eu-org",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Marcin Burda — personal site (SIG·LAB). Static, zero runtime dependencies.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "test": "node tools/ml.test.ts",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2",
+    "vite": "^7.1.6"
+  }
+}

@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F3F0E7">
+  <title>Marcin Burda — narzędzia AI i automatyzacje · SIG·LAB</title>
+  <meta name="description" content="Portfolio Marcina Burdy: pipeline'y danych (EV Radar), PWA edukacyjne (Kalkulator Mierników), aplikacje AI (MB Translator) i sieć neuronowa uczona na żywo w przeglądarce. AI engineering, automatyzacja, lokalne modele LLM.">
+  <link rel="canonical" href="https://burda.eu.org/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Marcin Burda · SIG·LAB">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:title" content="Marcin Burda — narzędzia AI i automatyzacje">
+  <meta property="og:description" content="Działający kod zamiast deklaracji: pipeline'y danych, PWA, aplikacje AI — oraz prawdziwa sieć neuronowa trenowana na żywo w przeglądarce.">
+  <meta property="og:url" content="https://burda.eu.org/">
+  <meta property="og:image" content="https://burda.eu.org/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <link rel="preload" href="/fonts/bricolage-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/bricolage-800-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/instrument-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/jetbrains-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+  <script type="module" src="/src/main.ts"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Marcin Burda",
+    "url": "https://burda.eu.org/",
+    "sameAs": ["https://github.com/SigPath"],
+    "email": "mailto:burda.marcin@me.com",
+    "knowsAbout": ["AI engineering", "Automatyzacja", "Lokalne modele LLM", "Python", "TypeScript", "Swift"],
+    "description": "Buduję narzędzia AI i automatyzacje pracujące na realnych danych — od pipeline'ów danych po lokalne modele LLM."
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Przejdź do treści</a>
+
+  <!-- ============ BEZEL / NAWIGACJA ============ -->
+  <header class="bezel">
+    <div class="wrap bezel-row">
+      <a class="brand" href="#start" aria-label="Marcin Burda — SIG·LAB, początek strony">
+        <svg class="brand-mark" width="26" height="18" viewBox="0 0 26 18" aria-hidden="true" focusable="false">
+          <path d="M1 17V4h7v9h5V1h7v12h5" fill="none" stroke="currentColor" stroke-width="2.4"/>
+        </svg>
+        <span class="brand-text">Marcin&nbsp;Burda <em>SIG·LAB</em></span>
+      </a>
+      <nav class="bezel-nav" aria-label="Główna nawigacja">
+        <a href="#lab">Laboratorium</a>
+        <a href="#projekty">Projekty</a>
+        <a href="#mozliwosci">Możliwości</a>
+        <a href="#protokol">Protokół</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <div class="bezel-status mono">
+        <span class="led" aria-hidden="true"></span>
+        <span data-clock aria-label="Czas lokalny">--:--:--</span>
+        <a class="bezel-gh" href="https://github.com/SigPath" rel="me noopener" target="_blank">
+          <svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+          <span>GitHub</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ CH·01 HERO ============ -->
+    <section class="hero" id="start" aria-labelledby="hero-title">
+      <div class="wrap">
+        <p class="kicker mono rv">AI ENGINEERING&ensp;·&ensp;AUTOMATYZACJA&ensp;·&ensp;LOKALNE MODELE LLM</p>
+        <h1 class="hero-title" id="hero-title">
+          <span class="hero-line rv">Marcin</span>
+          <span class="hero-line rv">Burda</span>
+        </h1>
+        <div class="hero-side">
+          <p class="hero-claim rv">Buduję narzędzia AI i&nbsp;automatyzacje, które pracują na&nbsp;realnych danych.</p>
+          <p class="hero-sub rv">Od dziennych pipeline'ów danych po sieć neuronową trenowaną na&nbsp;żywo w&nbsp;tej stronie. Lokalnie, gdy mogę — przez&nbsp;API, gdy przynosi to&nbsp;realną korzyść. Poniżej działający kod, nie&nbsp;deklaracje.</p>
+          <div class="hero-cta rv">
+            <a class="btn btn-primary" href="#projekty">Obejrzyj projekty</a>
+            <a class="btn" href="#kontakt">Nawiąż kontakt</a>
+          </div>
+        </div>
+      </div>
+
+      <figure class="scope rv" role="img" aria-label="Oscyloskop: animowany przebieg sygnału reagujący na ruch kursora.">
+        <canvas id="scope-canvas"></canvas>
+        <figcaption class="scope-hud mono">
+          <span class="hud-left">CH·01 — HERO.SCOPE · PRZEBIEG REAGUJE NA KURSOR</span>
+          <span class="hud-right">
+            <span data-readout="amp">A 0.00</span>
+            <span data-readout="t">t 0.0 s</span>
+            <span data-readout="fps">-- FPS</span>
+          </span>
+        </figcaption>
+      </figure>
+
+      <div class="wrap hero-cue mono rv" aria-hidden="true">
+        <span>PRZEWIŃ</span>
+        <span class="cue-arrow">↓</span>
+        <span>CH·02 — LABORATORIUM</span>
+      </div>
+    </section>
+
+    <!-- ============ CH·02 SYGNAŁ·LAB ============ -->
+    <section class="sect" id="lab" aria-labelledby="lab-title">
+      <div class="wrap">
+        <header class="sect-head rv">
+          <p class="sect-tag mono"><span class="led" aria-hidden="true"></span>CH·02 / SYGNAŁ·LAB</p>
+          <h2 id="lab-title">Laboratorium: mała sieć, prawdziwy trening</h2>
+          <p class="sect-lead">To nie animacja. W tej sekcji działa minimalna sieć neuronowa (1–H–1,&nbsp;tanh) pisana od zera: forward pass, strata MSE, wsteczna propagacja i&nbsp;SGD — kilkadziesiąt linii TypeScript, zero bibliotek ML. Włącz trening i patrz, jak model dopasowuje się do funkcji celu… albo rozbiegnie, jeśli dasz mu za duży krok uczenia.</p>
+        </header>
+
+        <div class="lab rv">
+          <div class="lab-screen">
+            <canvas id="lab-canvas" role="img" aria-label="Dwa wykresy treningu sieci neuronowej: graf sieci z wagami oraz krzywa dopasowania modelu do funkcji celu, poniżej przebieg straty."></canvas>
+            <p class="lab-stats mono" aria-live="polite">
+              <span>EPOKA <b data-lab="epoch">0</b></span>
+              <span>STRATA <b data-lab="loss">—</b></span>
+              <span>LR <b data-lab="lr">0,03</b></span>
+              <span>NEURONY <b data-lab="units">12</b></span>
+              <span>KROKI/S <b data-lab="sps">0</b></span>
+            </p>
+          </div>
+
+          <div class="lab-panel">
+            <h3 class="panel-title mono">PULT STEROWANIA</h3>
+            <div class="ctl-row">
+              <button class="btn btn-primary" id="lab-toggle" type="button">Rozpocznij trening</button>
+              <button class="btn" id="lab-reset" type="button">Reset wag</button>
+            </div>
+            <div class="ctl-field">
+              <label for="lab-units">Neurony ukryte: <output id="lab-units-out" for="lab-units">12</output></label>
+              <input type="range" id="lab-units" min="4" max="24" step="1" value="12">
+            </div>
+            <div class="ctl-field">
+              <label for="lab-lr">Współczynnik uczenia</label>
+              <select id="lab-lr">
+                <option value="0.003">0,003 — ostrożnie</option>
+                <option value="0.01">0,01 — stabilnie</option>
+                <option value="0.03" selected>0,03 — standard</option>
+                <option value="0.1">0,1 — agresywnie</option>
+                <option value="0.3">0,3 — niestabilnie (skoki straty)</option>
+              </select>
+            </div>
+            <div class="ctl-field">
+              <label for="lab-target">Funkcja celu</label>
+              <select id="lab-target">
+                <option value="sin" selected>sinus · sin(πx)</option>
+                <option value="square">skok · funkcja progowa</option>
+                <option value="abs">absolut · |x| − 0,5</option>
+              </select>
+            </div>
+            <label class="ctl-check">
+              <input type="checkbox" id="lab-noise">
+              <span>Szum w danych treningowych</span>
+            </label>
+            <p class="lab-note mono">TRYB: SGD pełną partią (64&nbsp;próbki) · tanh · inicjalizacja losowa. Zmiana neuronów inicjalizuje wagi od nowa.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CH·03 PROJEKTY ============ -->
+    <section class="sect" id="projekty" aria-labelledby="proj-title">
+      <div class="wrap">
+        <header class="sect-head rv">
+          <p class="sect-tag mono"><span class="led" aria-hidden="true"></span>CH·03 / PROJEKTY</p>
+          <h2 id="proj-title">Kod, który działa — nie makiety</h2>
+          <p class="sect-lead">Publiczne repozytoria, każdy projekt rozwiązuje konkretny problem. Linki prowadzą do kodu i działających rezultatów — możesz wszystko sprawdzić sam.</p>
+        </header>
+
+        <div class="proj-grid">
+          <article class="proj rv">
+            <header class="proj-head">
+              <p class="proj-status mono"><span class="led led-on" aria-hidden="true"></span>AKTYWNY · DZIENNY CI</p>
+              <h3><a href="https://github.com/SigPath/EVRadar" target="_blank" rel="noopener">EV&nbsp;Radar<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true"><path d="M2 10 10 2M4 2h6v6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a></h3>
+              <p class="proj-role mono">AGREGATOR OFERT EV · PYTHON · DANE</p>
+            </header>
+            <p class="proj-p"><strong>Problem.</strong> Ręczne śledzenie ofert leasingowych i poleasingowych aut elektrycznych w dziewięciu serwisach to praca, której nikt nie powinien wykonywać dwa razy.</p>
+            <p class="proj-p"><strong>Rozwiązanie.</strong> Codzienny skan 9 źródeł (publiczne API, <code>__NEXT_DATA__</code>, <code>ng-state</code>, indeks Algolia), deduplikacja po VIN, historia w SQLite — a w efekcie jeden samodzielny plik HTML: nowe oferty, obniżki i zniknięcia, cena na tle mediany rynku oraz szacowana deprecjacja z regresji. Źródła zabraniające skanowania w robots.txt są respektowane — zabezpieczeń nie omijam.</p>
+            <ul class="chips" aria-label="Technologie">
+              <li>Python 3.12</li><li>mypy strict</li><li>ruff</li><li>SQLite</li><li>Jinja2</li><li>GitHub Actions</li><li>pytest</li><li>Telegram API</li>
+            </ul>
+            <p class="proj-links">
+              <a class="btn btn-sm" href="https://github.com/SigPath/EVRadar" target="_blank" rel="noopener">Kod na GitHubie</a>
+              <a class="btn btn-sm" href="https://sigpath.github.io/EVRadar/" target="_blank" rel="noopener">Raport na żywo</a>
+            </p>
+          </article>
+
+          <article class="proj rv">
+            <header class="proj-head">
+              <p class="proj-status mono"><span class="led led-on" aria-hidden="true"></span>OPUBLIKOWANY · PWA OFFLINE</p>
+              <h3><a href="https://github.com/SigPath/Kalkulator-Miernikow" target="_blank" rel="noopener">Kalkulator&nbsp;Mierników<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true"><path d="M2 10 10 2M4 2h6v6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a></h3>
+              <p class="proj-role mono">NARZĘDZIE EDUKACYJNE · ELEKTROTECHNIKA</p>
+            </header>
+            <p class="proj-p"><strong>Problem.</strong> Obliczenia z miernictwa — niepewności pomiarowe, II prawo Kirchhoffa, układy równań — powtarzane ręcznie na każdej lekcji.</p>
+            <p class="proj-p"><strong>Rozwiązanie.</strong> Aplikacja webowa bez backendu, która nie tylko liczy, ale pokazuje rozwiązanie krok po kroku: wskazania i błędy przyrządu, systemy liczbowe z pełnym zapisem metody, Kirchhoffa i metodę Cramera. Po instalacji działa offline dzięki service workerowi.</p>
+            <ul class="chips" aria-label="Technologie">
+              <li>HTML/CSS/JS</li><li>bez frameworka</li><li>PWA</li><li>Service Worker</li><li>Web Manifest</li><li>GitHub Pages</li>
+            </ul>
+            <p class="proj-links">
+              <a class="btn btn-sm" href="https://github.com/SigPath/Kalkulator-Miernikow" target="_blank" rel="noopener">Kod na GitHubie</a>
+              <a class="btn btn-sm" href="https://sigpath.github.io/Kalkulator-Miernikow/" target="_blank" rel="noopener">Otwórz aplikację</a>
+            </p>
+          </article>
+
+          <article class="proj rv">
+            <header class="proj-head">
+              <p class="proj-status mono"><span class="led led-wip" aria-hidden="true"></span>PROTOTYP · W ROZWOJU</p>
+              <h3><a href="https://github.com/SigPath/Translator" target="_blank" rel="noopener">MB&nbsp;Translator<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true"><path d="M2 10 10 2M4 2h6v6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a></h3>
+              <p class="proj-role mono">APLIKACJA NATYWNA · SWIFT · AI SPEECH</p>
+            </header>
+            <p class="proj-p"><strong>Problem.</strong> Rozmowy głosowe PL↔EN bez wchodzenia botom w spotkanie — rozmówca ma po prostu słyszeć naturalny głos z mikrofonu.</p>
+            <p class="proj-p"><strong>Rozwiązanie.</strong> Natywna aplikacja menu-bar na macOS (Apple Silicon): mowa → tekst → tłumaczenie → mowa przez Azure Speech i ElevenLabs, klucze API w Keychain, audio przez wirtualne urządzenie. Build odtwarzalny z XcodeGen, testy jednostkowe. Uczciwie: pierwszy kamień milowy (M0) — kompilacja i kolejne etapy w toku.</p>
+            <ul class="chips" aria-label="Technologie">
+              <li>Swift 6</li><li>macOS 14+</li><li>AVFoundation</li><li>Azure Speech</li><li>ElevenLabs</li><li>Keychain</li><li>XcodeGen</li>
+            </ul>
+            <p class="proj-links">
+              <a class="btn btn-sm" href="https://github.com/SigPath/Translator" target="_blank" rel="noopener">Kod na GitHubie</a>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CH·04 MOŻLIWOŚCI ============ -->
+    <section class="sect" id="mozliwosci" aria-labelledby="cap-title">
+      <div class="wrap">
+        <header class="sect-head rv">
+          <p class="sect-tag mono"><span class="led" aria-hidden="true"></span>CH·04 / MOŻLIWOŚCI</p>
+          <h2 id="cap-title">Karta charakterystyki</h2>
+          <p class="sect-lead">Obszary, w których pracuję i rozwijam się — z dowodem zamiast deklaracji. Statusy to uczciwa samoocena: „w praktyce” oznacza kod w publicznym repozytorium, „eksploruję” oznacza, że wciąż się uczę.</p>
+        </header>
+
+        <div class="sheet-wrap rv">
+          <table class="sheet">
+            <thead>
+              <tr><th scope="col">Obszar</th><th scope="col">W praktyce</th><th scope="col">Status</th><th scope="col">Dowód</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">AI engineering</th>
+                <td>Integracje modeli przez API: rozpoznawanie mowy, tłumaczenie, synteza. Eksperymenty z lokalnym uruchamianiem LLM.</td>
+                <td><span class="tag">rozwijam</span></td>
+                <td><a href="https://github.com/SigPath/Translator" target="_blank" rel="noopener">MB Translator</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Automatyzacja</th>
+                <td>Dzienne pipeline'y danych: scraping, harmonogramy CI, powiadomienia, raporty bez serwera.</td>
+                <td><span class="tag tag-solid">w praktyce</span></td>
+                <td><a href="https://github.com/SigPath/EVRadar" target="_blank" rel="noopener">EV Radar</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Backend i dane</th>
+                <td>Python, SQLite, odczyt danych SSR i publicznych API, analiza statystyczna, regresja.</td>
+                <td><span class="tag tag-solid">w praktyce</span></td>
+                <td><a href="https://github.com/SigPath/EVRadar" target="_blank" rel="noopener">EV Radar</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Frontend i interakcje</th>
+                <td>Semantyczny HTML/CSS/TS, PWA, Canvas 2D i WebGL, animacje bez bibliotek.</td>
+                <td><span class="tag tag-solid">w praktyce</span></td>
+                <td><a href="https://github.com/SigPath/Kalkulator-Miernikow" target="_blank" rel="noopener">Kalkulator Mierników</a>, ta strona</td>
+              </tr>
+              <tr>
+                <th scope="row">Narzędzia i jakość</th>
+                <td>Git, GitHub Actions, mypy strict, ruff, pytest; agenty kodujące (Copilot, Claude Code) pod własnym review.</td>
+                <td><span class="tag tag-solid">w praktyce</span></td>
+                <td><a href="https://github.com/SigPath/EVRadar" target="_blank" rel="noopener">EV Radar</a>, <a href="https://github.com/SigPath/Translator" target="_blank" rel="noopener">MB Translator</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Systemy natywne</th>
+                <td>Swift 6 na macOS, Keychain, wirtualne urządzenia audio, XcodeGen.</td>
+                <td><span class="tag">eksploruję</span></td>
+                <td><a href="https://github.com/SigPath/Translator" target="_blank" rel="noopener">MB Translator</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CH·05 PROTOKÓŁ ============ -->
+    <section class="sect" id="protokol" aria-labelledby="phi-title">
+      <div class="wrap">
+        <header class="sect-head rv">
+          <p class="sect-tag mono"><span class="led" aria-hidden="true"></span>CH·05 / PROTOKÓŁ</p>
+          <h2 id="phi-title">Jak pracuję</h2>
+        </header>
+        <ol class="proto">
+          <li class="rv">
+            <span class="proto-no mono" aria-hidden="true">01</span>
+            <h3>Kod ponad deklaracje</h3>
+            <p>Zanim napiszę o umiejętnościach, wrzucam działające repozytorium. Portfolio bez kodu to broszura.</p>
+          </li>
+          <li class="rv">
+            <span class="proto-no mono" aria-hidden="true">02</span>
+            <h3>Mierz, nie zgaduj</h3>
+            <p>Niepewność pomiaru, mediana rynku, strata w każdej epoce — decyzje na liczbach, nie na wrażeniu.</p>
+          </li>
+          <li class="rv">
+            <span class="proto-no mono" aria-hidden="true">03</span>
+            <h3>Iteruj publicznie</h3>
+            <p>Prototyp, testy, poprawka, commit. EV Radar ma dziś 9 źródeł, bo kiedyś miał jedno.</p>
+          </li>
+          <li class="rv">
+            <span class="proto-no mono" aria-hidden="true">04</span>
+            <h3>Lokalnie, gdy się da</h3>
+            <p>Modele lokalne są darmowe i prywatne; API jest wygodniejsze i dokładniejsze. Wybór między nimi to decyzja kosztowa, nie kwestia mody.</p>
+          </li>
+          <li class="rv">
+            <span class="proto-no mono" aria-hidden="true">05</span>
+            <h3>Koszt jest metryką</h3>
+            <p>Każde wywołanie API ma cenę. Projektowanie pod budżet to część inżynierii, nie dodatek.</p>
+          </li>
+          <li class="rv">
+            <span class="proto-no mono" aria-hidden="true">06</span>
+            <h3>AI to narzędzie pracy</h3>
+            <p>Agenty kodujące przyspieszają ręce, ale review, testy i odpowiedzialność zostają na mnie.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ CH·06 KONTAKT ============ -->
+    <section class="sect sect-contact" id="kontakt" aria-labelledby="con-title">
+      <div class="wrap">
+        <header class="sect-head rv">
+          <p class="sect-tag mono"><span class="led" aria-hidden="true"></span>CH·06 / POŁĄCZENIE</p>
+          <h2 id="con-title">Nawiążmy połączenie</h2>
+          <p class="sect-lead">Masz projekt, w którym dane, automatyzacja albo AI mają zacząć realnie działać? Napisz — dobry stary e-mail wciąż działa najlepiej.</p>
+        </header>
+
+        <ul class="channels rv">
+          <li class="ch">
+            <span class="ch-tag mono">E-MAIL</span>
+            <a class="ch-val" href="mailto:burda.marcin@me.com">burda.marcin@me.com</a>
+          </li>
+          <li class="ch">
+            <span class="ch-tag mono">GITHUB</span>
+            <a class="ch-val" href="https://github.com/SigPath" target="_blank" rel="me noopener">github.com/SigPath</a>
+          </li>
+          <li class="ch ch-slot">
+            <span class="ch-tag mono">LINKEDIN</span>
+            <span class="ch-val ch-val-slot">kanał nieaktywny — dodaj link w <code>index.html</code></span>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ STOPKA ============ -->
+  <footer class="foot">
+    <div class="wrap foot-grid">
+      <div class="foot-brand">
+        <svg class="brand-mark" width="26" height="18" viewBox="0 0 26 18" aria-hidden="true" focusable="false">
+          <path d="M1 17V4h7v9h5V1h7v12h5" fill="none" stroke="currentColor" stroke-width="2.4"/>
+        </svg>
+        <p class="mono">SIG·LAB — burda.eu.org</p>
+      </div>
+      <p class="foot-note">© <span data-year>2026</span> Marcin Burda. Zaprojektowane i zbudowane ręcznie: zero zależności runtime, fonty self-hosted, grafika generowana proceduralnie.</p>
+      <nav class="foot-nav" aria-label="Nawigacja stopki">
+        <a href="#lab">Laboratorium</a>
+        <a href="#projekty">Projekty</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="https://github.com/SigPath/burda.eu.org" target="_blank" rel="noopener">Kod tej strony</a>
+      </nav>
+      <p class="foot-eof mono" aria-hidden="true">KONIEC TRANSMISJI · EOF</p>
+    </div>
+  </footer>
+
+  <!-- ============ KURSOR-PROBNIK (tylko pointer:fine) ============ -->
+  <div class="probe" aria-hidden="true">
+    <div class="probe-x"></div>
+    <div class="probe-y"></div>
+    <div class="probe-tag mono">x:0000 y:0000</div>
+  </div>
+</body>
+</html>
