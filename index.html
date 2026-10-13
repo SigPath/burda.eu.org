@@ -170,7 +170,7 @@
         <header class="sect-head rv">
           <p class="sect-tag mono"><span class="led" aria-hidden="true"></span>CH·03 / PROJEKTY</p>
           <h2 id="proj-title">Kod, który działa — nie makiety</h2>
-          <p class="sect-lead">Publiczne repozytoria, każdy projekt rozwiązuje konkretny problem. Linki prowadzą do kodu i działających rezultatów — możesz wszystko sprawdzić sam.</p>
+          <p class="sect-lead">Trzynaście publicznych repozytoriów: trzy flagowe projekty i dziesięć narzędzi warsztatowych. Linki prowadzą do kodu i działających dem — możesz wszystko sprawdzić sam.</p>
         </header>
 
         <div class="proj-grid">
@@ -224,6 +224,65 @@
             </p>
           </article>
         </div>
+
+        <div class="sect-head sub rv">
+          <p class="sect-tag mono"><span class="led" aria-hidden="true"></span>WARSZTAT · 10 PROJEKTÓW</p>
+          <h3>Narzędzia zbudowane pod portfolio — każdy z testami, CI i tam, gdzie to ma sens, żywym demo</h3>
+          <p class="sect-lead">Matematyka pisana od zera, bez bibliotek-udajaczy: solver MNA, PCA, k-means, backprop MLP. Zwykły Python i TypeScript, zero zbędnych zależności.</p>
+        </div>
+
+        <div class="warsztat rv">
+          <article class="mini-card">
+            <h4><a href="https://github.com/SigPath/tokenometr" target="_blank" rel="noopener">Tokenometr</a></h4>
+            <p>Kalkulator kosztów LLM: scenariusz użycia → miesięczny koszt per model i próg zwrotu sprzętu lokalnego.</p>
+            <p class="mini-links"><a class="demo" href="https://sigpath.github.io/tokenometr/" target="_blank" rel="noopener">● Demo</a><a href="https://github.com/SigPath/tokenometr" target="_blank" rel="noopener">Kod</a></p>
+          </article>
+          <article class="mini-card">
+            <h4><a href="https://github.com/SigPath/sig-bench" target="_blank" rel="noopener">SIG·BENCH</a></h4>
+            <p>Benchmark lokalnych LLM po polsku: jakość na 5 zadaniach, tok/s, latencja → jeden raport HTML.</p>
+            <p class="mini-links"><a class="demo" href="https://sigpath.github.io/sig-bench/" target="_blank" rel="noopener">● Demo</a><a href="https://github.com/SigPath/sig-bench" target="_blank" rel="noopener">Kod</a></p>
+          </article>
+          <article class="mini-card">
+            <h4><a href="https://github.com/SigPath/prompt-arena" target="_blank" rel="noopener">Prompt Arena</a></h4>
+            <p>Pojedynek promptów A/B na endpointach OpenAI-compatible (Ollama, OpenRouter). BYOK, latencja, tokeny, eksport MD.</p>
+            <p class="mini-links"><a class="demo" href="https://sigpath.github.io/prompt-arena/" target="_blank" rel="noopener">● Demo</a><a href="https://github.com/SigPath/prompt-arena" target="_blank" rel="noopener">Kod</a></p>
+          </article>
+          <article class="mini-card">
+            <h4><a href="https://github.com/SigPath/mapa-semantyczna" target="_blank" rel="noopener">Mapa semantyczna</a></h4>
+            <p>Embeddingi w 100% w przeglądarce: zdania PL → mapa 2D. Własne PCA (metoda potęgowa) i k-means.</p>
+            <p class="mini-links"><a class="demo" href="https://sigpath.github.io/mapa-semantyczna/" target="_blank" rel="noopener">● Demo</a><a href="https://github.com/SigPath/mapa-semantyczna" target="_blank" rel="noopener">Kod</a></p>
+          </article>
+          <article class="mini-card">
+            <h4><a href="https://github.com/SigPath/notatnik-rag" target="_blank" rel="noopener">Notatnik RAG</a></h4>
+            <p>Lokalny RAG po polsku: notatki → indeks embeddingów → odpowiedzi z cytowaniami. Zero chmury, zero zależności.</p>
+            <p class="mini-links"><a href="https://github.com/SigPath/notatnik-rag" target="_blank" rel="noopener">Kod</a></p>
+          </article>
+          <article class="mini-card">
+            <h4><a href="https://github.com/SigPath/ai-digest" target="_blank" rel="noopener">AI Digest</a></h4>
+            <p>Dzienny przegląd świata AI: Hacker News + arXiv → filtr słów kluczowych → raport publikowany automatycznie o 7:30.</p>
+            <p class="mini-links"><a class="demo" href="https://sigpath.github.io/ai-digest/" target="_blank" rel="noopener">● Demo (dzienny)</a><a href="https://github.com/SigPath/ai-digest" target="_blank" rel="noopener">Kod</a></p>
+          </article>
+          <article class="mini-card">
+            <h4><a href="https://github.com/SigPath/dyktator-pl" target="_blank" rel="noopener">Dyktator PL</a></h4>
+            <p>Lokalne dyktowanie: whisper na Twoim sprzęcie + polskie komendy głosowe („kropka", „przecinek", „nowa linia") → tekst w schowku.</p>
+            <p class="mini-links"><a href="https://github.com/SigPath/dyktator-pl" target="_blank" rel="noopener">Kod</a></p>
+          </article>
+          <article class="mini-card">
+            <h4><a href="https://github.com/SigPath/asystent-glosowy" target="_blank" rel="noopener">Asystent głosowy offline</a></h4>
+            <p>„Siri bez chmury": whisper (STT) + Ollama (mózg, pamięć 20 wiadomości) + Piper (TTS). Zero wysyłanych nagrań.</p>
+            <p class="mini-links"><a href="https://github.com/SigPath/asystent-glosowy" target="_blank" rel="noopener">Kod</a></p>
+          </article>
+          <article class="mini-card">
+            <h4><a href="https://github.com/SigPath/obwodomierz" target="_blank" rel="noopener">Obwodomierz</a></h4>
+            <p>Symulator obwodów DC: rysuj schemat na siatce, solver MNA pisany od zera liczy napięcia i prądy na żywo.</p>
+            <p class="mini-links"><a class="demo" href="https://sigpath.github.io/obwodomierz/" target="_blank" rel="noopener">● Demo</a><a href="https://github.com/SigPath/obwodomierz" target="_blank" rel="noopener">Kod</a></p>
+          </article>
+          <article class="mini-card">
+            <h4><a href="https://github.com/SigPath/repo-doctor" target="_blank" rel="noopener">Repo Doctor</a></h4>
+            <p>Audyt własnych repozytoriów GitHub: oceny A–D, konkretne zalecenia, raport z prawdziwych danych.</p>
+            <p class="mini-links"><a class="demo" href="https://sigpath.github.io/repo-doctor/" target="_blank" rel="noopener">● Demo</a><a href="https://github.com/SigPath/repo-doctor" target="_blank" rel="noopener">Kod</a></p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -244,9 +303,9 @@
             <tbody>
               <tr>
                 <th scope="row">AI engineering</th>
-                <td>Integracje modeli przez API: rozpoznawanie mowy, tłumaczenie, synteza. Eksperymenty z lokalnym uruchamianiem LLM.</td>
+                <td>Integracje modeli przez API (mowa, tłumaczenie, synteza). Lokalne LLM w praktyce: benchmark, RAG z cytowaniami, asystent głosowy offline.</td>
                 <td><span class="tag">rozwijam</span></td>
-                <td><a href="https://github.com/SigPath/Translator" target="_blank" rel="noopener">MB Translator</a></td>
+                <td><a href="https://github.com/SigPath/Translator" target="_blank" rel="noopener">MB Translator</a>, <a href="https://github.com/SigPath/sig-bench" target="_blank" rel="noopener">SIG·BENCH</a>, <a href="https://github.com/SigPath/notatnik-rag" target="_blank" rel="noopener">Notatnik RAG</a></td>
               </tr>
               <tr>
                 <th scope="row">Automatyzacja</th>
@@ -265,6 +324,12 @@
                 <td>Semantyczny HTML/CSS/TS, PWA, Canvas 2D i WebGL, animacje bez bibliotek.</td>
                 <td><span class="tag tag-solid">w praktyce</span></td>
                 <td><a href="https://github.com/SigPath/Kalkulator-Miernikow" target="_blank" rel="noopener">Kalkulator Mierników</a>, ta strona</td>
+              </tr>
+              <tr>
+                <th scope="row">Algorytmy od zera</th>
+                <td>Solver MNA, PCA, k-means, backprop MLP — bez bibliotek numerycznych, z testami jednostkowymi.</td>
+                <td><span class="tag tag-solid">w praktyce</span></td>
+                <td><a href="https://github.com/SigPath/obwodomierz" target="_blank" rel="noopener">Obwodomierz</a>, <a href="https://github.com/SigPath/mapa-semantyczna" target="_blank" rel="noopener">Mapa semantyczna</a>, SIG·LAB wyżej</td>
               </tr>
               <tr>
                 <th scope="row">Narzędzia i jakość</th>
