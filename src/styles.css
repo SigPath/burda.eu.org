@@ -673,6 +673,27 @@ body::after {
   overflow-wrap: anywhere;
 }
 a.ch-val:hover { color: var(--sig); }
+.ch-mail {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  color: var(--ink);
+  transition: color 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+}
+.ch-mail:hover { color: var(--sig); }
+.ch-mail::after {
+  content: "↗";
+  font-family: var(--f-mono);
+  font-size: 0.7em;
+  opacity: 0.6;
+}
+.ch-copy { align-self: flex-start; margin-top: 2px; }
 .ch-slot { border-style: dashed; border-color: var(--line-2); }
 .ch-slot:hover { transform: none; box-shadow: none; }
 .ch-val-slot {

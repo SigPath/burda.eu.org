@@ -33,6 +33,48 @@ export function initProbe(): void {
   });
 }
 
+/* ---------- E-mail odkrywany klikiem (ochrona przed harvesterami) ---------- */
+export function initMail(): void {
+  const btn = document.querySelector<HTMLButtonElement>('[data-mail]');
+  if (!btn) return;
+
+  btn.addEventListener('click', () => {
+    const addr = (btn.dataset.mail ?? '').split('').reverse().join('');
+    if (!addr) return;
+
+    const link = document.createElement('a');
+    link.className = 'ch-val';
+    link.href = `mailto:${addr}`;
+    link.textContent = addr;
+
+    const copy = document.createElement('button');
+    copy.type = 'button';
+    copy.className = 'btn btn-sm ch-copy';
+    copy.textContent = 'Kopiuj adres';
+    copy.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(addr);
+      } catch {
+        // fallback dla kontekstów bez Clipboard API
+        const ta = document.createElement('textarea');
+        ta.value = addr;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        ta.remove();
+      }
+      copy.textContent = 'Skopiowano ✓';
+      window.setTimeout(() => { copy.textContent = 'Kopiuj adres'; }, 1800);
+    });
+
+    const wrap = document.createElement('span');
+    wrap.style.display = 'contents';
+    wrap.append(link, copy);
+    btn.replaceWith(wrap);
+    link.focus();
+  }, { once: true });
+}
+
 /* ---------- Zegar bezela + rok ---------- */
 export function initClock(): void {
   const clocks = document.querySelectorAll<HTMLElement>('[data-clock]');

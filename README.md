@@ -55,7 +55,8 @@ public/
 | Projekty | `index.html` → sekcja `CH·03` (każdy projekt to `<article class="proj">`) |
 | Możliwości / statusy | `index.html` → tabela w `CH·04` |
 | Zasady pracy | `index.html` → lista w `CH·05` |
-| E-mail / GitHub / LinkedIn | `index.html` → sekcja `CH·06` (LinkedIn ma slot „kanał nieaktywny” — podmień na link) |
+| E-mail | `index.html` → sekcja `CH·06`. Adres jest **celowo ukryty przed harvesterami spamu**: zapisany od tyłu w `data-mail` (np. `moc.em@nicram.adrub` = `burda.marcin@me.com`) i odkrywany dopiero klikiem. Zmieniając adres, wpisz go **od końca**. |
+| GitHub / LinkedIn | `index.html` → sekcja `CH·06` (zwykłe linki) + `sameAs` w JSON-LD w `<head>` |
 | Kolory i typografia | `src/styles.css` → blok `:root` |
 | Sterowanie labem (zakresy, LR) | `src/lab.ts` → `TARGETS`, opcje w `index.html` (`#lab-lr`) |
 

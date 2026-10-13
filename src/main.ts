@@ -1,9 +1,10 @@
 import './styles.css';
-import { initClock, initProbe, initReveal } from './ui';
+import { initClock, initMail, initProbe, initReveal } from './ui';
 
 document.documentElement.classList.add('js');
 
 initClock();
+initMail();
 initProbe();
 initReveal();
 
